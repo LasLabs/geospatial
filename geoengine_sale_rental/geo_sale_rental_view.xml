@@ -24,7 +24,6 @@
             <field name="name">Rental view</field>
             <field name="arch" type="xml">
                 <geoengine version="7.0">
-                    <field name='display_name'/>
                     <field name="partner_id">
                         <field name='name'/>
                         <field name='zip'/>
