@@ -19,7 +19,7 @@
 #
 ##############################################################################
 {'name': 'Geospatial support for sale_rental',
- 'version': '0.0.1',
+ 'version': '0.0.5',
  'category': 'GeoBI',
  'author': "LasLabs,Odoo Community Association (OCA)",
  'license': 'AGPL-3',
