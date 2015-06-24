@@ -22,7 +22,7 @@
 from openerp.addons.base_geoengine import geo_model, fields
 
 
-class SaleOrder(geo_model.GeoModel):
+class SaleRental(geo_model.GeoModel):
     """Add geo_point to sale.rental"""
     _inherit = "sale.rental"
 
