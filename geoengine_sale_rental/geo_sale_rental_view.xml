@@ -13,7 +13,7 @@
             <field name="inherit_id" ref="sale_rental.sale_rental_form"/>
             <field name="arch" type="xml">
                 <field name="partner_id" position="after">
-                    <field name="geo_point" colspan="4" widget="text"
+                    <field name="geo_point" colspan="2" widget="geo_edit_map"
                            groups="base_geoengine.group_geoengine_user,base_geoengine.group_geoengine_admin"/>
                 </field>
             </field>
