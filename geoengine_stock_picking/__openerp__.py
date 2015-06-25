@@ -19,7 +19,7 @@
 #
 ##############################################################################
 {'name': 'Geospatial support for stock.picking',
- 'version': '0.0.8',
+ 'version': '0.1',
  'category': 'GeoBI',
  'author': "LasLabs,Odoo Community Association (OCA)",
  'license': 'AGPL-3',
