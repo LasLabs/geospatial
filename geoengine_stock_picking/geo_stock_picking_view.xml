@@ -12,10 +12,13 @@
             <field name="type">form</field>
             <field name="inherit_id" ref="stock.view_picking_form"/>
             <field name="arch" type="xml">
-                <field name="partner_id" position="after">
-                    <field name="geo_point" colspan="4" widget="text"
-                           groups="base_geoengine.group_geoengine_user,base_geoengine.group_geoengine_admin"/>
-                </field>
+                <notebook>
+                    <page string='Map'>
+                        <field name="geo_point" colspan="4" widget="geo_edit_map"
+                               ref="geoengine_partner.field_res_partner_geo_point"
+                               groups="base_geoengine.group_geoengine_user,base_geoengine.group_geoengine_admin"/>
+                    </page>
+                </notebook>
             </field>
         </record>
 
