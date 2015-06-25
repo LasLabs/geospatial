@@ -19,7 +19,7 @@
 #
 ##############################################################################
 {'name': 'Geospatial support for sales',
- 'version': '0.1',
+ 'version': '0.2',
  'category': 'GeoBI',
  'author': "Camptocamp,Odoo Community Association (OCA)",
  'license': 'AGPL-3',
