@@ -14,7 +14,6 @@
             <field name="arch" type="xml">
                 <field name="partner_id" position="after">
                     <field name='street'/>
-                    <field name='street2'/>
                     <field name='zip'/>
                     <field name="geo_point" colspan="2" widget="geo_edit_map"
                            groups="base_geoengine.group_geoengine_user,base_geoengine.group_geoengine_admin"/>
