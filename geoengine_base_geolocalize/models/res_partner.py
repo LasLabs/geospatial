@@ -23,7 +23,7 @@
 
 from .abstract import GeoAbstract, Address
 
-class ResPartner(geo_model.GeoModel):
+class ResPartner(GeoAbstract):
     """Add geo_point to partner using a function field"""
     _inherit = "res.partner"
 
