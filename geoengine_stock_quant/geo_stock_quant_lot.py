@@ -22,17 +22,19 @@
 #from openerp import models, fields, api
 import logging
 from openerp.osv import fields, osv
-from openerp.addons.base_geoengine import geo_model, fields
+from openerp.addons.base_geoengine import geo_model
+from openerp.addons.base_geoengine import fields as geo_fields
 
 
 _logger = logging.getLogger(__name__)
 
 
-class StockProductionLot(geo_model.GeoModel):
-    """Add geo_point to stock.production.lot """
-    _inherit = "stock.production.lot"
+class StockQuant(geo_model.GeoModel):
+    """Add geo_point to stock.quant """
+    _inherit = "stock.quant"
 
-    geo_point = geo_fields.GeoPoint(readonly=True, store=True)
+    geo_point = geo_fields.GeoPoint('Address Coordinate',
+                                    readonly=True, store=True)
 
     
 class StockMove(osv.osv):
@@ -46,7 +48,7 @@ class StockMove(osv.osv):
             if move.state == 'done':
                 
                 if move.location_dest_id.usage == 'customer':
-                    for lot in move.lot_ids:
+                    for lot in move.quant_ids:
                         
                         try:
                             lot.geo_point = move.partner_id.geo_point

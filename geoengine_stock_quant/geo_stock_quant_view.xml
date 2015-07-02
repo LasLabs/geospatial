@@ -3,11 +3,15 @@
     <data>
         
         <!-- stock production lot -->
-        <record model="ir.ui.view" id="geo_stock_production_lot_view_form">
-            <field name="name">geo_stock_production_lot_view_form</field>
-            <field name="model">stock.production.lot</field>
+        <record id="stock.quantsact" model="ir.actions.act_window">
+            <field name="view_mode">tree,form,graph,geoengine</field>
+        </record>
+        
+        <record model="ir.ui.view" id="geo_stock_quant_view_form">
+            <field name="name">geo_stock_quant_form</field>
+            <field name="model">stock.quant</field>
             <field name="type">form</field>
-            <field name="inherit_id" ref="stock.view_production_lot_form"/>
+            <field name="inherit_id" ref="stock.view_stock_quant_form"/>
             <field name="arch" type="xml">
                 <notebook>
                     <page string='Map'>
@@ -18,8 +22,9 @@
             </field>
         </record>
 
+
         <!-- GeoEngine views -->
-        <record id="ir_ui_view_geo_stock_production_lot" model="ir.ui.view">
+        <record id="ir_ui_view_geo_stock_quant" model="ir.ui.view">
             <field name="name">Inventory Locations</field>
             <field name="arch" type="xml">
                 <geoengine version="7.0">
@@ -29,14 +34,14 @@
                 </geoengine>
             </field>
             <field eval="16" name="priority"/>
-            <field name="model">stock.production.lot</field>
+            <field name="model">stock.quant</field>
         </record>
 
-        <record id="geoengine_vector_layer_stock_production_lot" model="geoengine.vector.layer">
-            <field name="geo_field_id" ref='geoengine_stock_production_lot.field_geo_point'/>
+        <record id="geoengine_vector_layer_stock_quant" model="geoengine.vector.layer">
+            <field name="geo_field_id" ref='geoengine_stock_quant.field_geo_point'/>
             <field name="name">Stock lot map view</field>
             <field eval="6" name="sequence"/>
-            <field name="view_id" ref="ir_ui_view_geo_stock_production_lot"/>
+            <field name="view_id" ref="ir_ui_view_geo_stock_quant"/>
             <field name="geo_repr">basic</field>
             <field eval="1" name="nb_class"/>
             <field name="begin_color">#FF680A</field>
@@ -61,11 +66,11 @@
             </field>
         </record>
 
-        <record id="geoengine_raster_layer_stock_production_lot" model="geoengine.raster.layer">
+        <record id="geoengine_raster_layer_stock_quant" model="geoengine.raster.layer">
             <field name="raster_type">google</field>
             <field name="google_type">G_HYBRID_MAP</field>
             <field name="name">Stock production lot background</field>
-            <field name="view_id" ref="ir_ui_view_geo_stock_production_lot"/>
+            <field name="view_id" ref="ir_ui_view_geo_stock_quant"/>
             <field eval="0" name="overlay"/>
         </record>
      </data>
