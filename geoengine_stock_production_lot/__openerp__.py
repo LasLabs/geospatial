@@ -30,7 +30,7 @@
      'stock',
  ],
  'data': [
-     'geo_stock_picking_view.xml'
+     'geo_stock_production_lot_view.xml'
  ],
  'installable': True,
  'application': True,
