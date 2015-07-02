@@ -3,10 +3,6 @@
     <data>
         
         <!-- stock production lot -->
-        <record id="stock.view_production_lot_tree" model="ir.actions.act_window">
-            <field name="view_mode">tree,form,geoengine</field>
-        </record>
-
         <record model="ir.ui.view" id="geo_stock_production_lot_view_form">
             <field name="name">geo_stock_production_lot_view_form</field>
             <field name="model">stock.production.lot</field>
@@ -15,8 +11,7 @@
             <field name="arch" type="xml">
                 <notebook>
                     <page string='Map'>
-                        <field name="geo_point" colspan="4" widget="geo_edit_map"
-                               ref="geoengine_stock_production_lot.field_stock_production_lot_geo_point"
+                        <field name="geo_point" widget="geo_edit_map"
                                groups="base_geoengine.group_geoengine_user,base_geoengine.group_geoengine_admin"/>
                     </page>
                 </notebook>
@@ -31,7 +26,6 @@
                     <field name='product_id'/>
                     <field name='name'/>
                     <field name='ref'/>
-                    <field name='stock_production_lot_owner'/>
                 </geoengine>
             </field>
             <field eval="16" name="priority"/>
@@ -39,8 +33,7 @@
         </record>
 
         <record id="geoengine_vector_layer_stock_production_lot" model="geoengine.vector.layer">
-            <field name="geo_field_id"
-                   ref="geoengine_stock_production_lot.field_stock_production_lot_geo_point"/>
+            <field name="geo_field_id" ref='geoengine_stock_production_lot.field_geo_point'/>
             <field name="name">Stock lot map view</field>
             <field eval="6" name="sequence"/>
             <field name="view_id" ref="ir_ui_view_geo_stock_production_lot"/>
