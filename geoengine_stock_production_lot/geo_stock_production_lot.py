@@ -22,7 +22,8 @@
 #from openerp import models, fields, api
 import logging
 from openerp.osv import fields, osv
-from openerp.addons.base_geoengine import geo_model, fields
+from openerp.addons.base_geoengine import geo_model
+from openerp.addons.base_geoengine import fields as geo_fields
 
 
 _logger = logging.getLogger(__name__)
