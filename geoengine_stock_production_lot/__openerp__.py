@@ -18,4 +18,21 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-from . import geo_stock_picking
+{'name': 'Geospatial support for stock.production.lot',
+ 'version': '0.1',
+ 'category': 'GeoBI',
+ 'author': "LasLabs, Odoo Community Association (OCA)",
+ 'license': 'AGPL-3',
+ 'website': 'https://laslabs.com',
+ 'depends': [
+     'base',
+     'base_geoengine',
+     'stock',
+ ],
+ 'data': [
+     'geo_stock_picking_view.xml'
+ ],
+ 'installable': True,
+ 'application': True,
+ 'active': False,
+}

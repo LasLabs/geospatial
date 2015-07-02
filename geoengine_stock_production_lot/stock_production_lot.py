@@ -19,12 +19,9 @@
 #
 ##############################################################################
 
-from openerp.addons.base_geoengine import geo_model, fields
+from openerp.osv import fields, osv
 
+class StockProductionLot(osv.osv):
+    _inherit = "stock.production.lot"
 
-class StockPicking(geo_model.GeoModel):
-    """Add geo_point to stock.picking"""
-    _inherit = "stock.picking"
-
-    geo_point = fields.GeoPoint(
-        'Addresses coordinate', related='partner_id.geo_point')
+    
