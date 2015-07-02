@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <openerp>
     <data>
-        <!-- sale rental -->
+        <!-- stock picking -->
         <record id="stock.action_picking_tree" model="ir.actions.act_window">
             <field name="view_mode">tree,form,calendar,geoengine</field>
         </record>
