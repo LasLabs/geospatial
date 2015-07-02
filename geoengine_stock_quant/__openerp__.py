@@ -30,7 +30,7 @@
      'stock',
  ],
  'data': [
-     'geo_stock_production_lot_view.xml'
+     'geo_stock_quant_view.xml'
  ],
  'installable': True,
  'application': True,
