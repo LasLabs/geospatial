@@ -18,7 +18,7 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-{'name': 'Geospatial support for stock.production.lot',
+{'name': 'Geospatial support for stock.quant',
  'version': '0.1',
  'category': 'GeoBI',
  'author': "LasLabs, Odoo Community Association (OCA)",

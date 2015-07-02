@@ -13,12 +13,8 @@
             <field name="type">form</field>
             <field name="inherit_id" ref="stock.view_stock_quant_form"/>
             <field name="arch" type="xml">
-                <notebook>
-                    <page string='Map'>
-                        <field name="geo_point" widget="geo_edit_map"
-                               groups="base_geoengine.group_geoengine_user,base_geoengine.group_geoengine_admin"/>
-                    </page>
-                </notebook>
+                <field name="geo_point" widget="geo_edit_map"
+                       groups="base_geoengine.group_geoengine_user,base_geoengine.group_geoengine_admin"/>
             </field>
         </record>
 
