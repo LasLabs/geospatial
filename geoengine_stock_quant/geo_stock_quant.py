@@ -48,10 +48,10 @@ class StockMove(osv.osv):
             if move.state == 'done':
                 
                 if move.location_dest_id.usage == 'customer':
-                    for lot in move.quant_ids:
+                    for quant in move.quant_ids:
                         
                         try:
-                            lot.geo_point = move.partner_id.geo_point
+                            quant.geo_point = move.partner_id.geo_point
                         except Exception as e:
                             _logger.error(
                                 'Unable to apply geo for customer %s\n%s\n',
@@ -59,10 +59,10 @@ class StockMove(osv.osv):
                             )
                 
                 elif move.location_dest_id.usage == 'internal':
-                    for lot in move.quant_ids:
+                    for quant in move.quant_ids:
                         
                         try:
-                            lot.geo_point = move.location_dest_id.partner_id.geo_point
+                            quant.geo_point = move.location_dest_id.partner_id.geo_point
                         except Exception as e:
                             _logger.error(
                                 'Unable to apply geo for location %s\n%s\n',
