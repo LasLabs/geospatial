@@ -59,7 +59,7 @@ class StockMove(osv.osv):
                             )
                 
                 elif move.location_dest_id.usage == 'internal':
-                    for lot in move.lot_ids:
+                    for lot in move.quant_ids:
                         
                         try:
                             lot.geo_point = move.location_dest_id.partner_id.geo_point
@@ -71,6 +71,7 @@ class StockMove(osv.osv):
                         
                 else:
                     _logger.error(
-                        'Location type %s not implemented for geo tracking', 
+                        'Location type %s not implemented for geo tracking',
+                        move.location_dest_id.usage
                     )
                     
