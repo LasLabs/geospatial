@@ -50,8 +50,6 @@ class StockMove(osv.osv):
                 if move.location_dest_id.usage == 'customer':
                     for quant in move.quant_ids:
                         
-                        _logger.info('Internal location quant geo_point - %s', quant.id)
-                        
                         try:
                             quant.geo_point = move.partner_id.geo_point
                         except Exception as e:
@@ -62,8 +60,6 @@ class StockMove(osv.osv):
                 
                 elif move.location_dest_id.usage == 'internal':
                     for quant in move.quant_ids:
-                        
-                        _logger.info('Internal location quant geo_point - %s', quant.id)
                         
                         try:
                             quant.geo_point = move.location_dest_id.partner_id.geo_point
